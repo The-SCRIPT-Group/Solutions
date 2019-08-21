@@ -1,20 +1,12 @@
-n = input()
+a = int(input())
 
-subs = list(map(int, input().split()))
+fib = [0, 1]
 
-subs.append(60)
+for i in range(a - 2):
+    fib.append(fib[-1] + fib[-2])
+    res = 0
+    
+for i in range(0, len(fib), 2):
+    res += fib[i] * ((-1) ** (i / 2))
 
-dirtyness = 0
-cleanup = 0
-multiplier = 1
-
-for i in range(1, len(subs)):
-    dirtyness += (subs[i] - subs[i-1]) * multiplier
-    if dirtyness < 20:
-        multiplier += 1
-    else:
-        dirtyness = 0
-        multiplier = 1
-        cleanup += 1
-
-print(cleanup, end='')
+print(int(res))
