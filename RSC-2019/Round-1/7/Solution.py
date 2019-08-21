@@ -1,5 +1,3 @@
-from math import ceil
-
 word = input()
 
 wrap = ''
