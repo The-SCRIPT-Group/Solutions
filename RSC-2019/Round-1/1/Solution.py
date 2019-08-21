@@ -1,6 +1,6 @@
 def prime(n: int):
     c = 0
-    for i in range(2, n):
+    for i in range(2, int(n**(1/2))):
         if n%i == 0:
             c+=1
     return c == 0

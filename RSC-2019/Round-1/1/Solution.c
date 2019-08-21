@@ -1,9 +1,10 @@
-#include <iostream>
+#include <stdio.h>
+#include <math.h>
 
 int prime(int n) {
     int c, i;
     c = 0;
-    for (i = 2; i < n; i++) {
+    for (i = 2; i < sqrt(n); i++) {
         if (n%i == 0) {
             c++;
         }
@@ -13,14 +14,14 @@ int prime(int n) {
 
 int main() {
     int n;
-    std::cin >> n;
+    scanf("%d", &n);
     if (n <= 1) {
-        std::cout << "NONE";
+        printf("NONE");
     } else {
         if(prime(n)) {
-            std::cout << "PRIME";
+            printf("PRIME");
         } else {
-            std::cout << "NOT PRIME";
+            printf("NOT PRIME");
         }
     }
 }
