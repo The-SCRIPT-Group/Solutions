@@ -1,20 +1,20 @@
-word = input()
+n = input()
 
-wrap = ''
-layer = ''
+arr = list(map(int, input().split()))
 
-length = len(word) + (len(word) - 1)
+index = list()
+values = list()
+for j in range(len(arr)):
+    if arr[j] < 0 and arr[j] % 2 != 0 or arr[j] >= 0 and \
+        arr[j] % 2 == 0:
+        index.append(j)
+        values.append(arr[j])
 
+values.sort()
 
-for i in word:
-    wrap += layer + (i * length) + layer[::-1] + '\n'
-    layer += i
-    length -= 2
+meow = 0
+for j in index:
+    arr[j] = values[meow]
+    meow += 1
 
-for i in word[::-1]:
-    if length > 0:
-        wrap += layer + (i * length) + layer[::-1] + '\n'
-    layer = layer[::-1].replace(i, '', 1)[::-1]
-    length += 2
-    
-print(wrap)
+print(*arr)

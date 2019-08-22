@@ -1,22 +1,20 @@
-n = int(input())
-c = list(map(int, input().split()))
-h = list(map(int, input().split()))
+word = input()
 
-strength = n
+wrap = ''
+layer = ''
 
-for i in range(1, n + 1):
+length = len(word) + (len(word) - 1)
 
-    start = i - c[i-1]
-    if start < 1:
-        start = 1
 
-    end = i + c[i-1]
-    if end > n:
-        end = n
+for i in word:
+    wrap += layer + (i * length) + layer[::-1] + '\n'
+    layer += i
+    length -= 2
 
-    strength += (end - start)
-
-if sum(h) > strength:
-    print('NO')
-else:
-    print('YES')
+for i in word[::-1]:
+    if length > 0:
+        wrap += layer + (i * length) + layer[::-1] + '\n'
+    layer = layer[::-1].replace(i, '', 1)[::-1]
+    length += 2
+    
+print(wrap)

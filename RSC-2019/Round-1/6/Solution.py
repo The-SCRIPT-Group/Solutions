@@ -1,20 +1,20 @@
 n = input()
 
-arr = list(map(int, input().split()))
+subs = list(map(int, input().split()))
 
-index = list()
-values = list()
-for j in range(len(arr)):
-    if arr[j] < 0 and arr[j] % 2 != 0 or arr[j] >= 0 and \
-        arr[j] % 2 == 0:
-        index.append(j)
-        values.append(arr[j])
+subs.append(60)
 
-values.sort()
+dirtyness = 0
+cleanup = 0
+multiplier = 1
 
-meow = 0
-for j in index:
-    arr[j] = values[meow]
-    meow += 1
+for i in range(1, len(subs)):
+    dirtyness += (subs[i] - subs[i-1]) * multiplier
+    if dirtyness < 20:
+        multiplier += 1
+    else:
+        dirtyness = 0
+        multiplier = 1
+        cleanup += 1
 
-print(*arr)
+print(cleanup, end='')
