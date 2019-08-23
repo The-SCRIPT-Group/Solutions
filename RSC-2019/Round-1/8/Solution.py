@@ -1,20 +1,20 @@
-word = input()
+n = input()
 
-wrap = ''
-layer = ''
+subs = list(map(int, input().split()))
 
-length = len(word) + (len(word) - 1)
+subs.append(60)
 
+dirtyness = 0
+cleanup = 0
+multiplier = 1
 
-for i in word:
-    wrap += layer + (i * length) + layer[::-1] + '\n'
-    layer += i
-    length -= 2
+for i in range(1, len(subs)):
+    dirtyness += (subs[i] - subs[i-1]) * multiplier
+    if dirtyness < 20:
+        multiplier += 1
+    else:
+        dirtyness = 0
+        multiplier = 1
+        cleanup += 1
 
-for i in word[::-1]:
-    if length > 0:
-        wrap += layer + (i * length) + layer[::-1] + '\n'
-    layer = layer[::-1].replace(i, '', 1)[::-1]
-    length += 2
-    
-print(wrap)
+print(cleanup, end='')
