@@ -1,13 +1,16 @@
-rows, cols = list(map(int, input().split('\t')))
+
+rows, cols = list(map(int, input().split()))
 mat, meow = list(), list()
 meowTop = meowDown = maxLeft = maxRight = maxTop = maxDown = maxSum = 0
 
 
+# matrix input
 for _ in range(rows):
-    mat.append(list(map(int, input().split('\t'))))
+    mat.append(list(map(int, input().split())))
 
+    
 
-
+# Python tempsum()
 def tempsum(arr):
     sum = 0
     for i in range(len(arr)):
@@ -38,3 +41,6 @@ for i in range(maxTop, maxDown+1):
     for j in range (maxLeft, maxRight+1):
         print(str(mat[i][j]) + "\t", end= '')
     print()
+
+    
+
