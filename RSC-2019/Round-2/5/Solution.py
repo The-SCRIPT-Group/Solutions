@@ -5,8 +5,13 @@ meowTop = meowDown = maxLeft = maxRight = maxTop = maxDown = maxSum = 0
 
 
 # matrix input
-for _ in range(rows):
+for i in range(rows):
     mat.append(list(map(int, input().split())))
+    maxi = max(mat[i])
+
+if maxi < 0:
+    print(maxi, end='')
+    exit(0)
 
     
 
