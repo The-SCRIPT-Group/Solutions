@@ -1,5 +1,9 @@
 
 rows, cols = list(map(int, input().split()))
+
+if rows == 0 or cols == 0:
+    exit(0)
+
 mat, meow = list(), list()
 meowTop = meowDown = maxLeft = maxRight = maxTop = maxDown = maxSum = 0
 
