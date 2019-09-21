@@ -1,7 +1,10 @@
 # All TSG Solutions
 
-[December 2018](https://github.com/akhilnarang/solutions/tree/master/December-2018)
+[RSC 2018](https://github.com/The-SCRIPT-Group/Solutions/tree/master/2018%20Ready%20Set%20Code)
 
-[April 2019](https://github.com/akhilnarang/solutions/tree/master/April-2019)
+[CodeX December 2018](https://github.com/The-SCRIPT-Group/Solutions/tree/master/2018%20CodeX%20Dec)
 
-[August 2019](https://github.com/akhilnarang/solutions/tree/master/RSC-2019)
+[CodeX April 2019](https://github.com/The-SCRIPT-Group/Solutions/tree/master/2019%20CodeX%20Apr)
+
+[RSC August 2019](https://github.com/The-SCRIPT-Group/Solutions/tree/master/2019%20Ready%20Set%20Code)
+
