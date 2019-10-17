@@ -2,28 +2,19 @@ import java.util.Scanner;
 
 public class Solution {
 
-    static boolean prime(int n) {
-        int c, i;
-        c = 0;
-        for (i = 2; i < Math.sqrt(n); i++) {
-            if (n%i == 0) {
-                c++;
-            }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int f = 0;
+        for(int i = 1 ; i <= a ; i++) {
+            if(a%i == 0)
+                f++;
         }
-        return c == 0;
-    }
-    public static void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        if (n <= 1) {
+        if(f == 2)
+            System.out.println("PRIME");
+        else if(f == 1 || a == 0)
             System.out.println("NONE");
-        } else {
-            if(prime(n)) {
-                System.out.println("PRIME");
-            } else {
-                System.out.println("NOT PRIME");
-            }
-        }        
-        scanner.close();
+        else
+            System.out.println("NOT PRIME");
     }
 }
